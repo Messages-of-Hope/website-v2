@@ -1,7 +1,13 @@
 import React from "react"
 
+// Global styles
 import "@/src/fonts/fonts.css";
 import "@/src/globals.css";
+
+// Font Awesome
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 // Page metadata
 export const metadata = {
@@ -20,10 +26,19 @@ export const metadata = {
   }
 };
 
+import Header from "@/src/components/ui/Header/Header.jsx";
+import MessageButton from "@/src/components/ui/MessageButton.jsx";
+import Footer from "@/src/components/ui/Footer/Footer.jsx";
+
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header/>
+        {/* <MessageButton/> */}
+        {children}
+        <Footer/>
+      </body>
     </html>
   );
 };

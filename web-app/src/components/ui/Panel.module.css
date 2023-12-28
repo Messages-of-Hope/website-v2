@@ -1,0 +1,64 @@
+
+.panel {
+  position: relative;
+  width: 90svw;
+  max-width: 5148px;
+  min-height: 80svh;
+  margin: 10svh auto;
+  background-color: var(--grey-900);
+}
+
+@media (orientation: landscape) {
+
+  .panel {
+    width: 85svw;
+    min-height: 90svh;
+    margin: 5svh auto;
+  }
+
+}
+
+@media (min-width: 48rem) {
+  @media (orientation: portrait) {
+
+    .panel {
+      width: 90svw;
+      min-height: 90svh;
+      margin: 5svh auto;
+    }
+  
+  }
+
+  @media (orientation: landscape) {
+
+    .panel {
+      width: 80svw;
+      min-height: 90svh;
+      margin: 5svh auto;
+    }
+
+  }
+}
+
+@media (min-width: 64rem) {
+  @media (orientation: portrait) {
+
+    .panel {
+      width: 90svw;
+      min-height: 90svh;
+      margin: 5svh auto;
+    }
+
+  }
+
+  @media (orientation: landscape) {
+
+    .panel {
+      width: 80svw;
+      min-height: 90svh;
+      margin: 5svh auto;
+      padding: 4% 0 !important;
+    }
+
+  }
+}
