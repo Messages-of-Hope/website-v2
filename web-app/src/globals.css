@@ -73,7 +73,7 @@ html {
   min-height: -webkit-fill-available;
   overflow-x: hidden;
 
-  background: var(--main-white);
+  background: var(--grey-100);
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
@@ -86,44 +86,40 @@ body {
   overflow-x: hidden;
   position: relative;
 
-  background: var(--blue-300);
+  background: var(--grey-100);
 }
 
-body::-webkit-scrollbar {
-  width: 0rem !important;
+main {
+  overflow: hidden;
 }
 
 .title {
   font-family: var(--font-title);
   font-style: normal;
   font-weight: 400;
-  font-size: 4rem;
+  text-transform: uppercase;
 }
 
 .heading {
   font-family: var(--font-heading);
   font-style: normal;
   font-weight: 700;
-  font-size: 3rem;
 }
 
 .subheading {
   font-family: var(--font-subheading);
   font-style: normal;
   font-weight: 500;
-  font-size: 2rem;
 }
 
 .subheading-2 {
   font-family: var(--font-subheading);
   font-style: normal;
   font-weight: 400;
-  font-size: 1.5rem;
 }
 
 .body {
   font-family: var(--font-body);
   font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
 }
