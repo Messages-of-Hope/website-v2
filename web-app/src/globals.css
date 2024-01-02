@@ -61,8 +61,6 @@
   --font-heading: "Quicksand", sans-serif;
   --font-subheading: "Quicksand", sans-serif;
   --font-body: "Open Sans", sans-serif;
-
-  --min-width: 270px;
 }
 
 *,
@@ -74,7 +72,6 @@
 html {
   min-height: -webkit-fill-available;
   overflow-x: hidden;
-  min-width: var(--min-width);
 
   background: var(--main-white);
   scroll-behavior: smooth;
@@ -82,65 +79,51 @@ html {
 }
 
 body {
-  min-width: var(--min-width);
+  min-width: 280px;
   min-height: -webkit-fill-available;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   position: relative;
 
-  background: var(--grey-900);
+  background: var(--blue-300);
 }
 
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 0rem !important;
-} */
-
-main {
-  min-width: var(--min-width);
 }
 
 .title {
   font-family: var(--font-title);
   font-style: normal;
   font-weight: 400;
-  text-transform: uppercase;
-  line-height: 95%;
-  letter-spacing: -0.2rem;
+  font-size: 4rem;
 }
 
 .heading {
   font-family: var(--font-heading);
   font-style: normal;
   font-weight: 700;
+  font-size: 3rem;
 }
 
 .subheading {
   font-family: var(--font-subheading);
   font-style: normal;
   font-weight: 500;
+  font-size: 2rem;
 }
 
 .subheading-2 {
   font-family: var(--font-subheading);
   font-style: normal;
   font-weight: 400;
+  font-size: 1.5rem;
 }
 
 .body {
   font-family: var(--font-body);
   font-style: normal;
   font-weight: 400;
-}
-
-#home-panel {
-  position: relative;
-  width: 100lvw;
-  max-width: 5148px;
-  height: 100svh;
-  background: linear-gradient(180deg, rgba(0,0,0,0.7511379551820728) 3%, rgba(212,212,212,0) 24%, rgba(255,255,255,0) 100%), 
-              linear-gradient(0deg, rgba(0,0,0,0.7511379551820728) 3%, rgba(212,212,212,0) 24%, rgba(255,255,255,0) 100%), 
-              url("./components/home/assets/home-hero.png") right 66% bottom 70%/cover no-repeat border-box, 
-              var(--grey-900);
-  margin: 0 auto !important;
+  font-size: 1rem;
 }
