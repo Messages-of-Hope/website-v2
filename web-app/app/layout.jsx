@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 import "@/src/fonts/fonts.css";
 import "@/src/globals.css";
@@ -20,10 +20,15 @@ export const metadata = {
   }
 };
 
+import Header from "@/src/components/ui/Header/Header.jsx";
+import Footer from "@/src/components/ui/Footer/Footer.jsx";
+
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
+      <Header/>
       <body>{children}</body>
+      <Footer/>
     </html>
   );
 };
