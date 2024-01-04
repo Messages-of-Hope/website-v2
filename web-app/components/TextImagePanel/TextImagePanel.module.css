@@ -1,0 +1,103 @@
+
+
+.panel {
+  width: 90%;
+  margin: 5rem auto;
+}
+
+.picture {
+  display: none;
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--grey-900);
+  line-height: 95%;
+  letter-spacing: -0.2rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+@media (min-width: 48rem) {
+  @media (orientation: portrait) {
+
+    .title {
+      width: 70%;
+      max-width: 36rem;
+    }
+
+  }
+}
+
+@media (min-width: 64rem) {
+  @media (orientation: landscape) {
+
+    .panel {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      max-width: 80rem;
+      margin: 3rem auto;
+    }
+
+    .picture {
+      display: block;
+      width: 30%;
+    }
+
+    .picture img {
+      width: 100%;
+      height: auto;
+      border-top: solid 10px var(--red-primary);
+      border-left: solid 10px var(--red-primary);
+      border-bottom: solid 10px var(--green-primary);
+      border-right: solid 10px var(--green-primary);
+      border-bottom-right-radius: 5rem;
+    }
+
+    .panel article {
+      width: 60%;
+      max-width: 35rem;
+    }
+
+  }
+}
+
+.right .picture img {
+  border-bottom-right-radius: 75px;
+  border-top-left-radius: 0;
+}
+
+.left .picture img {
+  border-top-left-radius: 75px;
+  border-bottom-right-radius: 0;
+}
+
+.blue .picture img {
+  border-top: solid 10px var(--blue-primary);
+  border-left: solid 10px var(--blue-primary);
+  border-bottom: solid 10px var(--yellow-primary);
+  border-right: solid 10px var(--yellow-primary);
+}
+
+.yellow .picture img {
+  border-top: solid 10px var(--yellow-primary);
+  border-left: solid 10px var(--yellow-primary);
+  border-bottom: solid 10px var(--blue-primary);
+  border-right: solid 10px var(--blue-primary);
+}
+
+.green .picture img {
+  border-top: solid 10px var(--green-primary);
+  border-left: solid 10px var(--green-primary);
+  border-bottom: solid 10px var(--red-primary);
+  border-right: solid 10px var(--red-primary);
+}
+
+.red .picture img {
+  border-top: solid 10px var(--red-primary);
+  border-left: solid 10px var(--red-primary);
+  border-bottom: solid 10px var(--green-primary);
+  border-right: solid 10px var(--green-primary);
+}

@@ -1,0 +1,69 @@
+
+.aboutPanel .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.aboutPanel .content > :nth-last-child(1) {
+  align-self: flex-end;
+}
+
+.aboutBody {
+  color: var(--grey-900);
+  font-size: 1.15rem;
+  margin-top: 0;
+}
+
+@media (min-width: 48rem) {
+  @media (orientation: portrait) {
+
+    .floating {
+      margin-bottom: 0 !important;
+    }
+
+  }
+}
+
+@media (min-width: 64rem) {
+
+  .floating {
+    margin-bottom: 0 !important;
+  }
+
+}
+
+.button {
+  margin: 1rem auto;
+}
+
+@media (orientation: landscape) {
+
+  .aboutBody {
+    font-size: 1.25rem;
+  }
+
+}
+
+@media (min-width: 64rem) {
+  @media (orientation: portrait) {
+
+    .aboutBody {
+      width: 92%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+
+  @media (orientation: landscape) {
+
+    .aboutBody {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+}

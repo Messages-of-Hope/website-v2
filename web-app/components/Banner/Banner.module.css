@@ -1,0 +1,108 @@
+
+.imagePanel {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  min-height: 55svh;
+  min-width: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.imagePanel::before {
+  content: "";
+  width: 100%;
+  height: 12px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  border-bottom: 12px solid var(--blue-primary);
+}
+
+.imagePanel::after {
+  content: "";
+  width: 55%;
+  height: 12px;
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  border-bottom: 12px solid var(--yellow-primary);
+  border-left: 20px solid transparent;
+}
+
+.imagePanel.plain::before,
+.imagePanel.plain::after {
+  display: none !important;
+}
+
+.imagePanel.short {
+  min-height: 40svh;
+}
+
+.title {
+  font-size: 3.5rem;
+  color: var(--grey-100);
+  line-height: 95%;
+  letter-spacing: -0.2rem;
+  margin: 5rem auto 2rem auto;
+  width: 90svw;
+}
+
+@media (orientation: landscape) {
+
+  .imagePanel {
+    min-height: 95svh;
+  }
+
+  .imagePanel.short {
+    min-height: 65svh;
+  }
+
+  .title {
+    font-size: 3.75rem;
+    width: 80svw;
+  }
+
+}
+
+/* DESKTOP AND LANDSCAPE TABLET */
+
+@media (min-width: 64rem) {
+
+  .title {
+    margin-bottom: 3rem;
+  }
+
+  @media (orientation: portrait) {
+    
+    .imagePanel {
+      min-height: 65svh;
+    }
+
+    .imagePanel.short {
+      min-height: 45svh;
+    }
+
+  }
+
+  @media (orientation: landscape) {
+
+    .imagePanel {
+      min-height: 80svh;
+      max-height: 100rem;
+    }
+
+    .imagePanel.short {
+      min-height: 55svh;
+    }
+
+    .title {
+      font-size: 4rem;
+      width: 65svw;
+      max-width: 45rem;
+    }
+
+  }
+}
+
