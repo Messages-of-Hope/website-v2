@@ -1,7 +1,7 @@
 import React from "react";
 
-import "@/src/fonts/fonts.css";
-import "@/src/globals.css";
+import "@/fonts/fonts.css";
+import "@/app/global.css";
 
 // Page metadata
 export const metadata = {
@@ -20,15 +20,17 @@ export const metadata = {
   }
 };
 
-import Header from "@/src/components/ui/Header/Header.jsx";
-import Footer from "@/src/components/ui/Footer/Footer.jsx";
+import Header from "@/components/Header/Header.jsx";
+import Footer from "@/components/Footer/Footer.jsx";
 
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <Header/>
-      <body>{children}</body>
-      <Footer/>
+      <body>
+        <Header/>
+        {children}
+        <Footer/>
+      </body>
     </html>
   );
 };
