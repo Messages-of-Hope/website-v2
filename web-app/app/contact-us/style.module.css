@@ -1,0 +1,42 @@
+
+.panel {
+  width: 90%;
+  margin: 4rem auto;
+  max-width: 50rem;
+}
+
+.body {
+  font-size: 1.25rem;
+  color: var(--grey-900);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--grey-300);
+  font-size: 1.15rem;
+  color: var(--grey-900);
+  background: var(--white);
+}
+
+.button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--white);
+  border: 1px solid var(--grey-300);
+  color: var(--grey-900);
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.button:hover {
+  background: var(--grey-100);
+}
