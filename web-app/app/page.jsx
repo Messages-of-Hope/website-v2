@@ -4,6 +4,7 @@ import Banner from "@/components/Banner/Banner.jsx";
 import Button from "@/components/Button/Button.jsx";
 import TextImagePanel from "@/components/TextImagePanel/TextImagePanel.jsx";
 import ProjectCard from "@/components/ProjectCard/ProjectCard.jsx";
+import MessageSlideShow from "@/components/MessageSlideShow/MessageSlideShow.jsx";
 
 import styles from "./style.module.css";
 
@@ -62,10 +63,7 @@ const Home = () => {
         </div>
       </section>
 
-      <Banner className={styles.messagesBanner} image="/messages__hero.jpg">
-        <p className={`body ${styles.body}`}>You deserve to heal. You're so worth it. I hope you give yourself compassion and kindness on your hard days. You matter, your feelings matter.</p>
-        <p className={`body ${styles.body}`}>- Anonymous -</p>
-      </Banner>
+      <MessageSlideShow/>
     </main>
   );
 };
