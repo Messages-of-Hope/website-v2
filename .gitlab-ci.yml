@@ -1,0 +1,23 @@
+stages:
+  - build
+  - test
+  - deploy
+
+workflow:
+    name: "Build Checks"
+
+npm-build:
+    stage: build
+    only:
+        - merge-request
+
+    image: node:20-alpine
+    script:
+        - CI_JOB_SKIP_EXIT_CODE=0
+        - git remote set-url origin $CI_REPOSITORY_URL
+        - git fetch
+        - git checkout -B $CI_COMMIT_REF_NAME
+        - |
+            cd web-app
+            npm install
+            npm run build
