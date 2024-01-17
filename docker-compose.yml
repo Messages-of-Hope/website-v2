@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  web-app:
+    build: ./web-app
+    restart: always
+    ports:
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+    env_file:
+      - .env
+
+  api:
+    build: ./api
+    restart: always
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+    env_file:
+      - .env
