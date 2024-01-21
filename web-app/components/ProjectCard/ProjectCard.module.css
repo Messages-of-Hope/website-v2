@@ -81,3 +81,31 @@
               radial-gradient(circle, rgba(255,255,255,0) 0%, #ffc01d25 31%, #ffc01d6b 100%);
   z-index: 1;
 }
+
+.projectCard::before {
+  content: "";
+  position: absolute;
+  left: -25%;
+  bottom: 0;
+  width: 150%;
+  height: 120%;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #ffffff05 50%, #ffffffb3 100%);
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.projectCard:hover::before {
+  content: "";
+  position: absolute;
+  left: -25%;
+  bottom: 0;
+  width: 150%;
+  height: 120%;
+  opacity: 0.75;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #ffffff05 50%, #ffffffb3 100%);
+  z-index: 1;
+}

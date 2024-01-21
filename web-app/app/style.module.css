@@ -181,6 +181,10 @@
     margin: 1rem auto;
   }
 
+  .projectsPanel .content > :nth-child(n) {
+    max-width: 30rem;
+  }
+
 }
 
 @media (orientation: landscape) {
@@ -210,6 +214,7 @@
 
     .projectsPanel .content > :nth-child(n) {
       margin: 0 auto;
+      max-width: none;
     }
 
     .projectsPanel .content > :nth-child(3) {

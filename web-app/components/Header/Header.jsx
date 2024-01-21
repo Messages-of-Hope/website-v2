@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
 import MobileNavigation from "../MobileNavigation/MobileNavigation.jsx";
 
@@ -12,20 +11,25 @@ import styles from "./Header.module.css";
 const Header = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const headerRef = useRef();
-  const pathname = usePathname();
 
   function toggleMobileNav() {
     setIsMobileNavOpen(!isMobileNavOpen);
   }
 
-  window.removeEventListener("scroll", () => {});
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > window.innerHeight / 6) {
-      headerRef.current.classList.add(styles["scrolled"]);
-    } else {
-      headerRef.current.classList.remove(styles["scrolled"]);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight / 6) {
+        headerRef.current.classList.add(styles["scrolled"]);
+      } else {
+        headerRef.current.classList.remove(styles["scrolled"]);
+      }
     }
-  });
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
 
   return (
     <header ref={headerRef} className={`${styles["main-header"]}`}>
