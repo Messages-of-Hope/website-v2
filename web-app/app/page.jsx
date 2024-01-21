@@ -17,9 +17,9 @@ const Home = () => {
 
           <div className={styles.actions}>
             <Button colour="red" link="/write-a-message" text="Write a Message"/>
-            <Button colour="blue" link="/write-a-message" text="Write a Message"/>
-            <Button colour="yellow" link="/write-a-message" text="Write a Message"/>
-            <Button colour="green" link="/connections-2024" text="Our Latest Project"/>
+            <Button colour="blue" link="/projects/connections-2024" text="Connections 2024"/>
+            <Button colour="yellow" link="https://shop.messagesofhope.co.uk/" text="Help Support Us"/>
+            <Button colour="green" link="/projects/connections-2024" text="Our Latest Project"/>
           </div>        
         </article>
       </Banner>

@@ -33,10 +33,17 @@
   display: none;
 }
 
+.privacy_policy {
+  color: var(--grey-400);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
 .body {
   color: var(--grey-900);
   font-size: 1rem;
   margin: 0;
+  cursor: default;
 }
 
 .socials-list {
@@ -47,6 +54,11 @@
   margin: 0;
   padding: 0;
   border-top: 3px solid var(--grey-900);
+  position: relative;
+}
+
+.socials-list .privacy_policy {
+  display: none;
 }
 
 .social {
@@ -61,6 +73,17 @@
   align-items: center;
   margin: 0.5rem 0.35rem;
   font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.social:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
 }
 
 .icon {
@@ -77,6 +100,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .company-info .privacy_policy {
+    display: none;
+  }
+
+  .socials-list .privacy_policy {
+    position: absolute;
+    bottom: 35%;
+    left: 5%;
+    display: block;
   }
 
   .logo {

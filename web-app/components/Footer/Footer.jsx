@@ -24,16 +24,19 @@ const Footer = () => {
           <p className={`body ${styles["body"]}`}>Messages of Hope (MOH) C.I.C</p>
           <p className={`body ${styles["body"]}`}>Company Number 15299854</p>
           <p className={`body ${styles["body"]}`}>contact@messagesofhope.co.uk</p>
+          <a className={`body ${styles.privacy_policy}`} href="https://documents.messagesofhope.co.uk/privacy-policy">privacy policy</a>
         </article>
         <article className={styles["buttons"]}>
           <Button colour="red" className={styles["write-a-message"]} link="/write-a-message" text="Write a Message"/>
-          <Button colour="blue" link="/write-a-message" text="Undecided Button"/>
-          <Button colour="yellow" link="/write-a-message" text="Undecided Button"/>
-          <Button colour="green" link="/write-a-message" text="Our Latest Project"/>
+          <Button colour="blue" link="/projects/connections-2024" text="Connections 2024"/>
+          <Button colour="yellow" link="https://shop.messagesofhope.co.uk/" text="Help Support Us"/>
+          <Button colour="green" link="/projects/connections-2024" text="Our Latest Project"/>
         </article>
       </section>
 
       <section className={styles["socials-list"]}>
+        <a className={`body ${styles.privacy_policy}`} href="https://documents.messagesofhope.co.uk/privacy-policy">privacy policy</a>
+
         <a className={`${styles["social"]}`} href="mailto:contact@messagesofhope.co.uk">
           <FontAwesomeIcon className={`${styles["icon"]}`} icon={faEnvelope} />
         </a>
