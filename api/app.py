@@ -3,15 +3,21 @@ from quart_cors import cors, route_cors
 from asyncpg import create_pool
 import asyncio
 import os
-import datetime
+import smtplib
 
 GET_RANDOM_MESSAGE_SET = "SELECT messages FROM messages WHERE public=$1 ORDER BY RANDOM() LIMIT $2;"
 
-launch_date = datetime.datetime(int(os.environ["LAUNCH_YEAR"]), 
-    int(os.environ["LAUNCH_MONTH"]), 
-    int(os.environ["LAUNCH_DAY"]),
-    int(os.environ["LAUNCH_HOUR"]),
-    int(os.environ["LAUNCH_MINUTE"]))
+s = smtplib.SMTP('smtp.gmail.com', 587)
+s.starttls()
+s.login(os.environ["EMAIL_ADDR"], os.environ["EMAIL_PASSWORD"])
+
+def create_email_message(name, from_addr, organisation, subject, body):
+    return f"""From: {name} <{from_addr}>
+Org: {organisation}
+Subject: {subject}
+
+{body}
+"""
 
 # Database setup
 async def create_db_pool():
@@ -19,6 +25,7 @@ async def create_db_pool():
     Creates a connection pool to the database.
     """
     return await create_pool(dsn=os.environ["DATABASE_URL"], min_size=5, max_size=13)
+
 
 # App setup
 app = Quart(__name__)
@@ -28,7 +35,8 @@ async def startup():
     global pool
     pool = await create_db_pool()
 
-@app.route('/messages/', methods=['GET', 'OPTIONS'])
+
+@app.route('/messages', methods=['GET', 'OPTIONS'])
 @route_cors(allow_origin=os.environ["FRONTEND_ADDR"], allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
 async def get_messages():
     if request.method == 'OPTIONS':
@@ -44,7 +52,8 @@ async def get_messages():
         "msg": "Messages retrieved successfully."
     }), 200
 
-@app.route('/message/', methods=['GET', 'OPTIONS'])
+
+@app.route('/message', methods=['GET', 'OPTIONS'])
 @route_cors(allow_origin=os.environ["FRONTEND_ADDR"], allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
 async def get_message():
     if request.method == 'OPTIONS':
@@ -60,58 +69,25 @@ async def get_message():
         "msg": "Messages retrieved successfully."
     }), 200
 
-@app.route('/connections-2024-available/', methods=['GET', 'OPTIONS'])
-@route_cors(allow_origin="*", allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
-async def get_connections_available():
-    if (datetime.datetime.now() < launch_date):
-      return 404
+
+@app.route('/email', methods=['POST', 'OPTIONS'])
+@route_cors(allow_origin=os.environ["FRONTEND_ADDR"], allow_headers=["Content-Type"], allow_methods=["POST", "OPTIONS"])
+async def send_email():
     if request.method == 'OPTIONS':
         return {}, 204
-    # return a file from the static directory
+    data = await request.get_json()
+    name = data["name"]
+    from_addr = data["email"]
+    organisation = data["organisation"]
+    subject = data["subject"]
+    body = data["body"]
+    msg = create_email_message(name, from_addr, organisation, subject, body)
+    s.sendmail(os.environ["EMAIL_ADDR"], "contact@messagesofhope.co.uk", msg)
     return jsonify({
-        "available": True,
         "status": 200,
+        "msg": "Email sent successfully."
     }), 200
 
-@app.route('/connections-2024/', methods=['GET', 'OPTIONS'])
-@route_cors(allow_origin="*", allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
-async def get_connections():
-    if (datetime.datetime.now() < launch_date):
-      return 404
-    if request.method == 'OPTIONS':
-        return {}, 204
-    # return a file from the static directory
-    return await app.send_static_file('Connections Messages of Hope.mp4')
-
-@app.route('/connections-2024-subtitled-and-signed/', methods=['GET', 'OPTIONS'])
-@route_cors(allow_origin="*", allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
-async def get_connections_subtitled_and_signed():
-    if (datetime.datetime.now() < launch_date):
-      return 404
-    if request.method == 'OPTIONS':
-        return {}, 204
-    # return a file from the static directory
-    return await app.send_static_file('Connections Messages of Hope - Subtitled and Signed.mp4')
-
-@app.route('/making-of-connections-2024/', methods=['GET', 'OPTIONS'])
-@route_cors(allow_origin="*", allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
-async def get_making_of_connections():
-    if (datetime.datetime.now() < launch_date):
-      return 404
-    if request.method == 'OPTIONS':
-        return {}, 204
-    # return a file from the static directory
-    return await app.send_static_file('The Making of Connections Messages of Hope.mp4')
-
-@app.route('/making-of-connections-2024-subtitled-and-signed/', methods=['GET', 'OPTIONS'])
-@route_cors(allow_origin="*", allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
-async def get_making_of_connections_subtitled_and_signed():
-    if (datetime.datetime.now() < launch_date):
-      return 404
-    if request.method == 'OPTIONS':
-        return {}, 204
-    # return a file from the static directory
-    return await app.send_static_file('The Making of Connections Messages of Hope - Subtitled and Signed.mp4')
 
 # Development startup
 if __name__ == '__main__':
