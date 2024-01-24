@@ -24,7 +24,7 @@ const Footer = () => {
           <p className={`body ${styles["body"]}`}>Messages of Hope (MOH) C.I.C</p>
           <p className={`body ${styles["body"]}`}>Company Number 15299854</p>
           <p className={`body ${styles["body"]}`}>contact@messagesofhope.co.uk</p>
-          <a className={`body ${styles.privacy_policy}`} href="https://documents.messagesofhope.co.uk/privacy-policy">privacy policy</a>
+          <a className={`body ${styles.privacy_policy}`} href={`${process.env.NEXT_PUBLIC_DOCUMENTS_ADDR}/privacy-policy`}>privacy policy</a>
         </article>
         <article className={styles["buttons"]}>
           <Button colour="red" className={styles["write-a-message"]} link="/write-a-message" text="Write a Message"/>
@@ -35,7 +35,7 @@ const Footer = () => {
       </section>
 
       <section className={styles["socials-list"]}>
-        <a className={`body ${styles.privacy_policy}`} href="https://documents.messagesofhope.co.uk/privacy-policy">privacy policy</a>
+        <a className={`body ${styles.privacy_policy}`} href={`${process.env.NEXT_PUBLIC_DOCUMENTS_ADDR}/privacy-policy`}>privacy policy</a>
 
         <a className={`${styles["social"]}`} href="mailto:contact@messagesofhope.co.uk">
           <FontAwesomeIcon className={`${styles["icon"]}`} icon={faEnvelope} />

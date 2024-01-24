@@ -77,7 +77,7 @@
     .image {
       display: block;
       border: 5px solid var(--grey-900);
-      border-radius: 55px;
+      border-radius: 25px;
       grid-column: span 2;
     }
 

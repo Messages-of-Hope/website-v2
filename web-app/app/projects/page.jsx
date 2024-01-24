@@ -31,7 +31,7 @@ const Projects = () => {
               colour="yellow"/>
 
             <ProjectCard 
-              link="/projects" 
+              link="/projects/colouring-pages" 
               title="Colouring Pages" 
               image="/projects/colouring-pages.jpg"
               colour="red"/>
@@ -41,7 +41,7 @@ const Projects = () => {
                                     var(--grey-100)` }}
               className={styles.image}></picture>
         </div>
-        <div className={styles.grid}>
+        {/* <div className={styles.grid}>
             <ProjectCard 
               link="/projects" 
               title="Mental Wealth Festival at City Lit" 
@@ -70,7 +70,7 @@ const Projects = () => {
               title="Write a Message" 
               image="/projects/write-a-message.jpg"
               colour="red"/>
-        </div>
+        </div> */}
       </section>
     </main>
   );
