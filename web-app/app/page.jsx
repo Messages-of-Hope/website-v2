@@ -25,7 +25,7 @@ const Home = () => {
       </Banner>
 
       <TextImagePanel title="About Messages of Hope" image="/about__hero.jpg" alt="Two young adults holding a whiteboard saying 'Keep going, keep loving'.">
-        <p className={`body ${styles.aboutBody}`}>Have you seen our stickers whilst on a walk? Or maybe you've come across us and written a message of hope whilst you've been out and about?</p>
+        <p className={`body ${styles.aboutBody}`}>Have you seen our stickers whilst on a walk? Or maybe you&apos;ve come across us and written a message of hope whilst you&apos;ve been out and about?</p>
         <p className={`body ${styles.aboutBody}`}>Messages of Hope is a Community Interest Company that encourages people to write messages of hope for people struggling with their mental health. We turn your messages into stickers and Instagram posts and spread them across the UK.</p>
         <p className={`body ${styles.aboutBody}`}>We also try to spread hope and make connections by going out into public spaces and asking strangers to write messages of hope and creating short films of these experiences.</p>
         <p className={`body ${styles.aboutBody}`}>Check out more of the work we do below!</p>

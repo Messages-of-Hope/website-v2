@@ -13,7 +13,7 @@ s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls()
 s.login(os.environ["EMAIL_ADDR"], os.environ["EMAIL_PASSWORD"])
 
-def create_email_message(name, from_addr, organisation, subject, body):
+async def create_email_message(name, from_addr, organisation, subject, body):
     return f"""From: {name} <{from_addr}>
 Org: {organisation}
 Subject: {subject}
@@ -55,9 +55,9 @@ async def get_messages():
 
 @app.route('/message', methods=['GET'])
 async def get_message():
+    message = ""
     async with pool.acquire() as connection:
         recs = await connection.fetch(GET_RANDOM_MESSAGE_SET, 1, 1)
-        message = ""
         for rec in recs:
             message = rec["messages"]["message"]
     return jsonify({

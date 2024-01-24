@@ -21,7 +21,7 @@ const Shop = () => {
           <Image src="/shop/static.jpg" width={1000} height={1000} layout="responsive" className={styles.image} />
         </div>
 
-        <p className={`subheading ${styles.body}`}>Check back soon to see what we've got, but in the mean time have a look on our Instagram as we do sell merch through our Instagram account.</p>
+        <p className={`subheading ${styles.body}`}>Check back soon to see what we&apos;ve got, but in the mean time have a look on our Instagram as we do sell merch through our Instagram account.</p>
       </section>
     </main>
   );
