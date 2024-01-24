@@ -1,0 +1,22 @@
+.image_panel {
+  width: 40%;
+  max-width: 15rem;
+  margin: 0.5rem;
+}
+
+.image_panel img {
+  width: 100%;
+  height: auto;
+}
+
+.panel {
+  width: 95%;
+  max-width: 65rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 3rem auto;
+}
+
