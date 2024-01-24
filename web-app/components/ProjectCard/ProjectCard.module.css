@@ -3,7 +3,7 @@
   display: block;
   width: 100%;
   aspect-ratio: 1/1;
-  border-radius: 55px;
+  border-radius: 25px;
   overflow: hidden;
   border: solid 5px var(--grey-900);
   text-decoration: none;

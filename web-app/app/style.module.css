@@ -9,11 +9,12 @@
 
 .bannerContent .heading {
   color: var(--grey-100);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .bannerContent .actions a {
   display: none;
+  font-size: 1.15rem;
 }
 
 .bannerContent .actions > :nth-child(1) {
@@ -105,7 +106,7 @@
       justify-self: center;
       width: 100%;
       max-width: 18rem;
-      font-size: 1.5rem;
+      font-size: 1.35rem;
     }
 
     .bannerContent .actions > :nth-child(2n) {
@@ -248,7 +249,7 @@
     .projectsPanel .image {
       display: block;
       border: 5px solid var(--grey-900);
-      border-radius: 55px;
+      border-radius: 25px;
       grid-column: 1 / span 2;
     }
 

@@ -41,10 +41,10 @@
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: calc(1.5rem + 4vw);
   color: var(--grey-100);
   line-height: 95%;
-  letter-spacing: -0.2rem;
+  letter-spacing: -0.1rem;
   margin: 5rem auto 2rem auto;
   width: 90svw;
 }
@@ -60,7 +60,7 @@
   }
 
   .title {
-    font-size: 3.75rem;
+    font-size: 3rem;
     width: 80svw;
   }
 
@@ -72,6 +72,7 @@
 
   .title {
     margin-bottom: 3rem;
+    font-size: 3.5rem;
   }
 
   @media (orientation: portrait) {
