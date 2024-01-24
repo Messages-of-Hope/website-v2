@@ -7,6 +7,11 @@ import FloatingPanel from "@/components/FloatingPanel/FloatingPanel.jsx";
 
 import styles from "./style.module.css";
 
+export const metadata = {
+  title: "About",
+  description: "Learn more about Messages of Hope and the work we do.",
+};
+
 const About = () => {
   return (
     <main>

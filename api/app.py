@@ -1,11 +1,13 @@
 from quart import Quart, jsonify, make_response, request
-from quart_cors import cors, route_cors
+from quart_cors import cors
 from asyncpg import create_pool
 import asyncio
 import os
 import smtplib
+import datetime
 
 GET_RANDOM_MESSAGE_SET = "SELECT messages FROM messages WHERE public=$1 ORDER BY RANDOM() LIMIT $2;"
+INSERT_MESSAGE = "INSERT INTO messages (message, date, sourced, category, public) VALUES ($1, $2, $3, $4, $5);"
 
 s = smtplib.SMTP('smtp.gmail.com', 587)
 s.starttls()
@@ -29,6 +31,7 @@ async def create_db_pool():
 
 # App setup
 app = Quart(__name__)
+app = cors(app, allow_origin=os.environ["FRONTEND_ADDR"], allow_headers=["Content-Type"], allow_methods=["GET", "POST", "OPTIONS"])
 
 @app.before_serving
 async def startup():
@@ -36,11 +39,8 @@ async def startup():
     pool = await create_db_pool()
 
 
-@app.route('/messages', methods=['GET', 'OPTIONS'])
-@route_cors(allow_origin=os.environ["FRONTEND_ADDR"], allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
+@app.route('/messages', methods=['GET'])
 async def get_messages():
-    if request.method == 'OPTIONS':
-        return {}, 204
     async with pool.acquire() as connection:
         recs = await connection.fetch(GET_RANDOM_MESSAGE_SET, 1, 10)
         messages = []
@@ -53,11 +53,8 @@ async def get_messages():
     }), 200
 
 
-@app.route('/message', methods=['GET', 'OPTIONS'])
-@route_cors(allow_origin=os.environ["FRONTEND_ADDR"], allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
+@app.route('/message', methods=['GET'])
 async def get_message():
-    if request.method == 'OPTIONS':
-        return {}, 204
     async with pool.acquire() as connection:
         recs = await connection.fetch(GET_RANDOM_MESSAGE_SET, 1, 1)
         message = ""
@@ -70,11 +67,8 @@ async def get_message():
     }), 200
 
 
-@app.route('/email', methods=['POST', 'OPTIONS'])
-@route_cors(allow_origin=os.environ["FRONTEND_ADDR"], allow_headers=["Content-Type"], allow_methods=["POST", "OPTIONS"])
+@app.route('/email', methods=['POST'])
 async def send_email():
-    if request.method == 'OPTIONS':
-        return {}, 204
     data = await request.get_json()
     name = data["name"]
     from_addr = data["email"]
@@ -86,6 +80,19 @@ async def send_email():
     return jsonify({
         "status": 200,
         "msg": "Email sent successfully."
+    }), 200
+
+
+@app.route('/message', methods=['POST'])
+async def add_message():
+    data = await request.get_json()
+    message = data.get("message")
+    date = datetime.datetime.today()
+    async with pool.acquire() as connection:
+        await connection.execute(INSERT_MESSAGE, message, date, 'website', 'uncategorised', 0)
+    return jsonify({
+        "status": 200,
+        "msg": "Message added successfully."
     }), 200
 
 

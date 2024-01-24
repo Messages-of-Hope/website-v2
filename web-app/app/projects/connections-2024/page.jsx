@@ -7,6 +7,11 @@ import VideoPlayer from "@/components/VideoPlayer/VideoPlayer";
 
 import styles from "./style.module.css";
 
+export const metadata = {
+  title: "Connections 2024",
+  description: "Messages of Hope's Connections 2024 short film project.",
+};
+
 const Connections2024 = () => {
   const [showVideo, setShowVideo] = useState(false);
 

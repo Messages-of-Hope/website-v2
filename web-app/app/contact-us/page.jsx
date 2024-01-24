@@ -6,6 +6,12 @@ import Banner from "@/components/Banner/Banner.jsx";
 
 import styles from "./style.module.css";
 
+
+export const metadata = {
+  title: "Contact Us",
+  description: "Get in touch with Messages of Hope.",
+};
+
 const ContactUs = () => {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState(false);

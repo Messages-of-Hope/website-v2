@@ -6,6 +6,11 @@ import Button from "@/components/Button/Button";
 
 import styles from "./style.module.css";
 
+export const metadata = {
+  title: "Bags of Hope",
+  description: "Bags of Hope is a project to give items to patients arriving on psychiatric wards.",
+};
+
 const Projects = () => {
   return (
     <main>

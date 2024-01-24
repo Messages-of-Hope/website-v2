@@ -7,6 +7,11 @@ import Banner from "@/components/Banner/Banner.jsx";
 
 import styles from "./style.module.css";
 
+export const metadata = {
+  title: "Free Colouring Pages",
+  description: "Free colouring pages for you to download and print.",
+};
+
 const ColouringPages = () => {
   const [imageDetails, setImageDetails] = useState([]);
 
