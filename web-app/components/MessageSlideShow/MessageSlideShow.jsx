@@ -10,7 +10,7 @@ const MessageSlideShow = () => {
   useEffect(() => {
     const fetchMessage = async () => {
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/message/`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ADDR}/message`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
