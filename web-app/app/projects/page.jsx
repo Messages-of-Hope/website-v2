@@ -5,6 +5,11 @@ import Banner from "@/components/Banner/Banner.jsx";
 
 import styles from "./style.module.css";
 
+export const metadata = {
+  title: "Projects",
+  description: "Messages of Hope's projects.",
+};
+
 const Projects = () => {
   return (
     <main>

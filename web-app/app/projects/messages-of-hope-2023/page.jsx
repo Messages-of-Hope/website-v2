@@ -6,6 +6,11 @@ import Banner from "@/components/Banner/Banner.jsx";
 
 import styles from "./style.module.css";
 
+export const metadata = {
+  title: "Messages of Hope 2023",
+  description: "A collaborative art project at Barry Island, hosted by Messages of Hope."
+};
+
 const Projects = () => {
   return (
     <main>

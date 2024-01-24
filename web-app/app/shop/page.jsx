@@ -4,6 +4,11 @@ import Banner from "@/components/Banner/Banner.jsx";
 
 import styles from "./style.module.css";
 
+export const metadata = {
+  title: "Shop",
+  description: "Messages of Hope's shop.",
+};
+
 const Shop = () => {
   return (
     <main>
