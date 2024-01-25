@@ -17,7 +17,7 @@ const MobileNavigation = ({ toggleModal }) => {
             quality={100} />
         </picture>
 
-        <nav className={`${styles["main-nav"]} ${menu == "main" && styles["show"]}`}>
+        <nav className={`${styles["main-nav"]} ${styles["show"]}`}>
           <Link href="/" onClick={toggleModal}>Home</Link>
           <Link href="/about" onClick={toggleModal}>About</Link>
           <Link href="/projects" onClick={toggleModal}>Projects</Link>

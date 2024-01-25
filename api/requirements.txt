@@ -1,5 +1,4 @@
 requests==2.31.0
-Hypercorn==0.16.0
 asyncio==3.4.3
 asyncpg==0.29.0
 quart==0.19.4
