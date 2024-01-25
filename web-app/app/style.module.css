@@ -260,3 +260,19 @@
 
   }
 }
+
+
+.heading404 {
+  font-size: 3rem;
+  color: var(--grey-900);
+  line-height: 95%;
+  letter-spacing: -0.2rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.body404 {
+  color: var(--grey-900);
+  font-size: 1.15rem;
+  text-align: center;
+}
