@@ -42,7 +42,7 @@ async def startup():
 
 
 @app.route('/messages', methods=['GET', 'OPTIONS'])
-@route_cors(allow_origin=os.environ["FRONTEND_ADDR"], allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
+@route_cors(allow_origin='*', allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
 async def get_messages():
     async with pool.acquire() as connection:
         recs = await connection.fetch(GET_RANDOM_MESSAGE_SET, 1, 10)
@@ -64,7 +64,7 @@ async def get_message_from_database():
     return messages
 
 @app.route('/message', methods=['GET', 'OPTIONS'])
-@route_cors(allow_origin=os.environ["FRONTEND_ADDR"], allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
+@route_cors(allow_origin='*', allow_headers=["Content-Type"], allow_methods=["GET", "OPTIONS"])
 async def get_message():
     try:
         message = await get_message_from_database()
@@ -78,7 +78,7 @@ async def get_message():
 
 
 @app.route('/email', methods=['POST', 'OPTIONS'])
-@route_cors(allow_origin=os.environ["FRONTEND_ADDR"], allow_headers=["Content-Type"], allow_methods=["POST", "OPTIONS"])
+@route_cors(allow_origin='*', allow_headers=["Content-Type"], allow_methods=["POST", "OPTIONS"])
 async def send_email():
     data = await request.get_json()
     name = data["name"]
@@ -95,7 +95,7 @@ async def send_email():
 
 
 @app.route('/message', methods=['POST', 'OPTIONS'])
-@route_cors(allow_origin=os.environ["FRONTEND_ADDR"], allow_headers=["Content-Type"], allow_methods=["POST", "OPTIONS"])
+@route_cors(allow_origin='*', allow_headers=["Content-Type"], allow_methods=["POST", "OPTIONS"])
 async def add_message():
     data = await request.get_json()
     message = data.get("message")
