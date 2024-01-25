@@ -17,6 +17,10 @@ const Header = () => {
   }
 
   useEffect(() => {
+    if (window.scrollY > window.innerHeight / 6) {
+      headerRef.current.classList.add(styles["scrolled"]);
+    }
+
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight / 6) {
         headerRef.current.classList.add(styles["scrolled"]);

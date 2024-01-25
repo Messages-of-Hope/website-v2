@@ -10,7 +10,7 @@
               linear-gradient(180deg, rgba(0,0,0,0.7511379551820728) 3%, rgba(212,212,212,0) 24%, rgba(255,255,255,0) 100%),  
               url("/messages-slideshow.jpg") right 50% bottom 50%/cover no-repeat border-box, 
               var(--grey-900);
-  max-height: 18rem;
+  /* max-height: 18rem; */
   overflow: hidden;
 }
 
@@ -29,7 +29,7 @@
 @media (orientation: portrait) {
 
   .panel {
-    height: 45svh;
+    min-height: 45svh;
   }
 
 }
@@ -37,7 +37,7 @@
 @media (orientation: landscape) {
 
   .panel {
-    height: 65svh;
+    min-height: 65svh;
   }
 
 }
@@ -55,6 +55,10 @@
   .body {
     font-size: 1.25rem;
     width: 60%;
+  }
+
+  .panel {
+    min-height: 35vh;
   }
 
 }
