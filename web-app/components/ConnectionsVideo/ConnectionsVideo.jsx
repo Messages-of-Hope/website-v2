@@ -36,7 +36,7 @@ const ConnectionsVideo = () => {
         {showVideo ? <VideoPlayer 
           title="Connections 2024" 
           url="https://www.youtube.com/watch?app=desktop&si=EWa9X-xExixMpenj&v=dFJHklUGYTU&feature=youtu.be&ab_channel=ThriveLDN"
-          bslUrl={process.env.NEXT_PUBLIC_CONNECTIONS_ADDR + "/bsl"}
+          bslUrl="https://www.youtube.com/watch?v=ccomKjHDgp0&ab_channel=ThriveLDN"
           thumbnail="/projects/connections-2024/connections-thumbnail.png"
           className={styles.video}
           /> :
@@ -48,8 +48,8 @@ const ConnectionsVideo = () => {
       <section className={styles.panel}>
         {showVideo ? <VideoPlayer
         title="The Making of Connections 2024"
-        url={process.env.NEXT_PUBLIC_CONNECTIONS_ADDR + "/making-of"}
-        bslUrl={process.env.NEXT_PUBLIC_CONNECTIONS_ADDR + "/making-of-bsl"}
+        url="https://www.youtube.com/watch?v=X8Cu-JvoXSc&ab_channel=ThriveLDN"
+        bslUrl="https://www.youtube.com/watch?v=BAAUs5BfuKs&ab_channel=ThriveLDN"
         thumbnail="/projects/connections-2024/making-connections-thumbnail.png"
         className={styles.video}
         /> :
