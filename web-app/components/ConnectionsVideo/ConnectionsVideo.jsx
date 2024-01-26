@@ -35,7 +35,7 @@ const ConnectionsVideo = () => {
 
         {showVideo ? <VideoPlayer 
           title="Connections 2024" 
-          url={process.env.NEXT_PUBLIC_CONNECTIONS_ADDR + "/"}
+          url="https://www.youtube.com/watch?app=desktop&si=EWa9X-xExixMpenj&v=dFJHklUGYTU&feature=youtu.be&ab_channel=ThriveLDN"
           bslUrl={process.env.NEXT_PUBLIC_CONNECTIONS_ADDR + "/bsl"}
           thumbnail="/projects/connections-2024/connections-thumbnail.png"
           className={styles.video}
