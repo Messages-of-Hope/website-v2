@@ -1,4 +1,12 @@
-# Messages of Hope Website
+# Messages of Hope - Website v2
+
+> ### Important Notice
+>
+> This project is no longer in development. Due to significant design changes and improper use of git i.e. storing large blob files and libraries, it was not efficient to continue to use this project. This project was continued in a new repository with a new design and structure. The new repository can be found [here](https://git.jonathande.dev/messages-of-hope/website-v3).
+>
+> This repository is kept for historical purposes and to show the progression of the project.
+
+This is the source code for the Messages of Hope website. The website is served using a full stack web application using NextJS and a Flask API service. The website is designed to provide a platform for users to submit messages of hope to be displayed on the website. The website is designed to be a simple and easy to use platform for users to submit messages of hope to be displayed on the website.
 
 ## Project Structure
 
